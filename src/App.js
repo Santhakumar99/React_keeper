@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Notes from "./Components/Notes";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Card from "./Components/Card";
+import Contacts from "./Components/Contact";
+import Avator from "./Components/Avator";
+import ContactList from "./Components/ContactList";
+import Search from "./Components/Search";
 
 function App() {
+  function createContact(Contacts) {
+    return (
+      <Card
+        key={Contacts.name}
+        name={Contacts.name}
+        img={Contacts.img}
+        email={Contacts.email}
+        tel={Contacts.tel}
+      />
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Search />
+    </>
   );
 }
 
